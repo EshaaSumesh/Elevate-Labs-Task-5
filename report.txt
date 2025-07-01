@@ -1,0 +1,39 @@
+Wireshark Traffic Analysis – Task 5 Report
+
+Tool Used: Wireshark
+Platform: Kali Linux (Virtual Machine)
+
+Objective
+To capture live network traffic using Wireshark and identify at least three protocols in action (ICMP, DNS, and UDP).
+
+Method
+Started Wireshark on Kali Linux VM and selected the active interface (eth0).
+
+Generated traffic by:
+
+Running ping google.com
+Accessing http://google.com in browser
+Stopped capture after ~30 seconds.
+Used protocol filters (icmp, dns, udp) to analyze packets.
+
+ Protocols Identified
+Protocol	Description	Source IP	Destination IP	Notes
+ICMP	Ping request & reply	10.0.2.16	142.251.222.142	ICMP Echo requests and replies visible
+DNS	Domain name resolution	10.0.2.16	183.82.243.66	Query for A, AAAA records of google.com
+UDP	Transport for DNS queries	10.0.2.16	183.82.243.66	Underlying protocol for DNS
+
+Key Findings
+ICMP: Shows ping requests from Kali to Google's server with TTL and sequence numbers.
+DNS: Queries to google.com returned both IPv4 (A) and IPv6 (AAAA) records.
+UDP: Used for DNS transport on port 53.
+
+📦 Deliverables
+✅ .pcap file: task5.pcapng
+
+✅ Report: This document
+
+✅ Skills Practiced
+Interface selection
+Live packet capture
+Filtering and protocol analysis
+Saving .pcap files
